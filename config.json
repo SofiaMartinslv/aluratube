@@ -2,6 +2,7 @@
   "name": "Sofia Martins",
   "job": "Front-end developer",
   "github": "SofiaMartinslv",
+  "banner": "https://i.imgur.com/1vh7Dg5.jpg",
   "playlists": {
     "jogos": [
       {
@@ -53,105 +54,36 @@
         "key": 8
       }
     ],
-    "front-end": [
+    "music": [
       {
-        "title": "Jogo com JavaScript #01: Criando um Flappy Bird do ZERO!!!",
-        "url": "https://youtube.com/watch?v=jOAU81jdi-c",
-        "thumb": "https://img.youtube.com/vi/jOAU81jdi-c/hqdefault.jpg",
+        "title": "Mood",
+        "url": "https://www.youtube.com/watch?v=f1e8Ok4BmeU",
+        "thumb": "https://img.youtube.com/vi/f1e8Ok4BmeU/hqdefault.jpg",
         "key": 9
       },
       {
-        "title": "Jogo com JavaScript #01: Criando um Flappy Bird do ZERO!!!",
-        "url": "https://www.youtube.com/watch?v=llF6vD-RljE",
-        "thumb": "https://img.youtube.com/vi/llF6vD-RljE/hqdefault.jpg",
+        "title": "Daughter - Numbers",
+        "url": "https://www.youtube.com/watch?v=z-fD3PIRSO8",
+        "thumb": "https://img.youtube.com/vi/z-fD3PIRSO8/hqdefault.jpg",
         "key": 10
       },
       {
-        "title": "A Primeira Aula de Flutter Que Todo Mundo Deveria Ter",
-        "url": "https://www.youtube.com/watch?v=J4BVaXkwmM8",
-        "thumb": "https://img.youtube.com/vi/J4BVaXkwmM8/hqdefault.jpg",
+        "title": "Ex:Re - Romance (6 Music Live Room) ",
+        "url": "https://www.youtube.com/watch?v=6pNhrlPU-fA",
+        "thumb": "https://img.youtube.com/vi/6pNhrlPU-fA/hqdefault.jpg",
         "key": 11
       },
       {
-        "title": "O QUE SÃO FRAMEWORKS E BIBLIOTECAS? QUAIS AS DIFERENÇAS?",
-        "url": "https://www.youtube.com/watch?v=dp0zB4n3MUs",
-        "thumb": "https://img.youtube.com/vi/dp0zB4n3MUs/hqdefault.jpg",
+        "title": "Ex:Re - The Dazzler (6 Music Live Room)",
+        "url": "https://www.youtube.com/watch?v=-ZYG7xGf-ag",
+        "thumb": "https://img.youtube.com/vi/-ZYG7xGf-ag/hqdefault.jpg",
         "key": 12
       },
       {
-        "title": "Angular (O Vídeo que Você Precisava para Começar no Framework) // Dicionário do Programador",
-        "url": "https://www.youtube.com/watch?v=Yf0rC7dERjg",
-        "thumb": "https://img.youtube.com/vi/Yf0rC7dERjg/hqdefault.jpg",
+        "title": "Ghost - Cirice (Official Music Video)",
+        "url": "https://www.youtube.com/watch?v=-0Ao4t_fe0I",
+        "thumb": "https://img.youtube.com/vi/-0Ao4t_fe0I/hqdefault.jpg",
         "key": 13
-      },
-      {
-        "title": "Como Foi Programado um App Que Faz Mágica",
-        "url": "https://www.youtube.com/watch?v=I36seuWUe5s",
-        "thumb": "https://img.youtube.com/vi/I36seuWUe5s/hqdefault.jpg",
-        "key": 14
-      },
-      {
-        "title": "O que todo iniciante em Front End deveria aprender | Como manipular arrays e objetos em JavaScript",
-        "url": "https://www.youtube.com/watch?v=yS7AcF-xRUg",
-        "thumb": "https://img.youtube.com/vi/yS7AcF-xRUg/hqdefault.jpg",
-        "key": 15
-      },
-      {
-        "title": "5 Erros Históricos do CSS",
-        "url": "https://www.youtube.com/watch?v=HNjkqONzGS0",
-        "thumb": "https://img.youtube.com/vi/HNjkqONzGS0/hqdefault.jpg",
-        "key": 16
-      },
-      {
-        "title": "Deploy de Front End ATUALIZADO! | O que eu uso para hospedagem de Front End",
-        "url": "https://www.youtube.com/watch?v=d9c0r-J6CdM",
-        "thumb": "https://img.youtube.com/vi/d9c0r-J6CdM/hqdefault.jpg",
-        "key": 17
-      }
-    ],
-    "back-end": [
-      {
-        "title": "Node JS: Construindo CRUDs com file system focando em serialização e JSON",
-        "url": "https://www.youtube.com/watch?v=dvd3pNYh7So",
-        "thumb": "https://img.youtube.com/vi/dvd3pNYh7So/hqdefault.jpg",
-        "key": 18
-      },
-      {
-        "title": "Node JS: Construindo CRUDs com file system focando em serialização e JSON",
-        "url": "https://www.youtube.com/watch?v=8q36rNS5yVo",
-        "thumb": "https://img.youtube.com/vi/8q36rNS5yVo/hqdefault.jpg",
-        "key": 19
-      },
-
-      {
-        "title": "O que é o Java? #HipstersPontoTube",
-        "url": "https://www.youtube.com/watch?v=90NcVNsKGik",
-        "thumb": "https://img.youtube.com/vi/90NcVNsKGik/hqdefault.jpg",
-        "key": 20
-      },
-      {
-        "title": "O que é Machine Learning? #HipstersPontoTube",
-        "url": "https://www.youtube.com/watch?v=Iuz_jc96bQk",
-        "thumb": "https://img.youtube.com/vi/Iuz_jc96bQk/hqdefault.jpg",
-        "key": 21
-      },
-      {
-        "title": "A MELHOR linguagem de programação com Fabio Akita | #HipstersPontoTube",
-        "url": "https://www.youtube.com/watch?v=imB0QVoNrGc",
-        "thumb": "https://img.youtube.com/vi/imB0QVoNrGc/hqdefault.jpg",
-        "key": 22
-      },
-      {
-        "title": "Top 5 libs que todo aplicativo Android deve ter com Alex Felipe | #HipstersPontoTube",
-        "url": "https://www.youtube.com/watch?v=ldRbnpy-qQs",
-        "thumb": "https://img.youtube.com/vi/ldRbnpy-qQs/hqdefault.jpg",
-        "key": 23
-      },
-      {
-        "title": "O que é o C#? #HipstersPontoTube",
-        "url": "https://www.youtube.com/watch?v=0JWMVc1CqpA",
-        "thumb": "https://img.youtube.com/vi/0JWMVc1CqpA/hqdefault.jpg",
-        "key": 24
       }
     ]
   }
