@@ -5,12 +5,11 @@ import Menu from "../src/components/Menu";
 import { StyledTimeline } from "../src/components/Timeline";
 
 function HomePage() {
-  const homePageStyle = {};
   const [searchValue, setSearchValue] = React.useState("");
 
   return (
     <>
-      <div style={homePageStyle}>
+      <div>
         <Menu searchValue={searchValue} setSearchValue={setSearchValue} />
         <Header />
         <Timeline
