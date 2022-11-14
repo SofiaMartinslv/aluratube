@@ -1,7 +1,6 @@
 import React from "react";
 import config from "../config.json";
 import styled from "styled-components";
-import { CSSReset } from "../src/components/CSSReset";
 import Menu from "../src/components/Menu";
 import { StyledTimeline } from "../src/components/Timeline";
 
@@ -11,7 +10,6 @@ function HomePage() {
 
   return (
     <>
-      <CSSReset />
       <div style={homePageStyle}>
         <Menu searchValue={searchValue} setSearchValue={setSearchValue} />
         <Header />
@@ -27,6 +25,7 @@ function HomePage() {
 export default HomePage;
 
 const StyledHeader = styled.div`
+  background-color: ${({ theme }) => theme.backgroundLevel1};
   .banner img {
     width: 100%;
     height: 230px;
