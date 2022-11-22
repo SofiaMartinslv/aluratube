@@ -22,13 +22,21 @@ export const StyledAddVideo = styled.div`
     right: 16px;
     cursor: pointer;
   }
-  /* button[type="submit"] {
-    background-color: red;
-    padding: 8px 16px;
-    border: none;
+  input {
     border-radius: 2px;
-    cursor: pointer;
-    color: inherit;
-    width: 100%;
-  } */
+    border: 1px solid ${({ theme }) => theme.borderBase};
+    padding: 8px 10px;
+    margin-bottom: 10px;
+    outline: none;
+    color: #222222;
+    background-color: #f9f9f9;
+    color: ${({ theme }) => theme.textColorBase};
+    background-color: ${({ theme }) => theme.backgroundBase};
+  }
+
+  img {
+    width: 218px;
+    border-radius: var(--rounded-btn, 0.5rem);
+    margin: auto;
+  }
 `;

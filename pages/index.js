@@ -3,19 +3,26 @@ import config from "../config.json";
 import styled from "styled-components";
 import Menu from "../src/components/Menu";
 import { StyledTimeline } from "../src/components/Timeline";
+import { videoService } from "../src/services/videosService";
 
 function HomePage() {
+  const service = videoService();
   const [searchValue, setSearchValue] = React.useState("");
+  const [playlists, setPlaylists] = React.useState([]);
+  const [videos, setVideos] = React.useState([]);
+
+  React.useEffect(() => {
+    service.getPlaylists().then((res) => setPlaylists(res.data));
+    service.getVideos().then((res) => setVideos(res.data));
+  }, []);
 
   return (
     <>
       <div>
         <Menu searchValue={searchValue} setSearchValue={setSearchValue} />
         <Header />
-        <Timeline
-          searchValue={searchValue}
-          playlists={config.playlists}
-        ></Timeline>
+        {/* <Timeline searchValue={searchValue} playlists={playlists} videos={videos}></Timeline> */}
+        <Timeline></Timeline>
       </div>
     </>
   );
@@ -62,36 +69,34 @@ function Header() {
 }
 
 function Timeline({ searchValue, ...props }) {
-  const playlistsNames = Object.keys(props.playlists);
-
   return (
     <StyledTimeline>
-      {playlistsNames.map((playlistName) => {
-        const videos = props.playlists[playlistName];
-        return (
-          <section key={playlistName}>
-            <h2>{playlistName}</h2>
-            <div>
-              {videos
-                .filter((video) => {
-                  const [normalizedTitle, normalizedSearchValue] = [
-                    video.title.toLowerCase(),
-                    searchValue.toLowerCase(),
-                  ];
-                  return normalizedTitle.includes(normalizedSearchValue);
-                })
-                .map((video) => {
-                  return (
-                    <a key={video.key} href={video.url}>
-                      <img src={video.thumb} />
-                      <span>{video.title}</span>
-                    </a>
-                  );
-                })}
-            </div>
-          </section>
-        );
-      })}
+      {/* {props.playlists.length > 1 &&
+        props.playlists.map((playlist) => {
+          return (
+            <section key={playlist.id}>
+              <h2>{playlist.name}</h2>
+              <div>
+                {props.videos.filter((video) => video.playlist === playlist.id)
+                  .filter((video) => {
+                    const [normalizedTitle, normalizedSearchValue] = [
+                      video.title.toLowerCase(),
+                      searchValue.toLowerCase(),
+                    ];
+                    return normalizedTitle.includes(normalizedSearchValue);
+                  })
+                  .map((video) => {
+                    return (
+                      <a key={video.id} href={video.url}>
+                        <img src={video.thumb} />
+                        <span>{video.title}</span>
+                      </a>
+                    );
+                  })}
+              </div>
+            </section>
+          );
+        })} */}
     </StyledTimeline>
   );
 }

@@ -2,46 +2,35 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledSearch = styled.div`
-  display: flex;
+  /* display: flex;
   flex-direction: row;
   border: 1px solid ${({ theme }) => theme.borderBase};
   max-width: 425px;
   width: 100%;
   border-radius: 2px;
-  overflow: hidden;
+  overflow: hidden; */
 
   input {
-    width: 80%;
     padding: 4px 6px;
     border: none;
     outline: none;
     color: ${({ theme }) => theme.textColorBase};
     background-color: ${({ theme }) => theme.backgroundBase};
   }
-  button {
-    flex: 1;
-    cursor: pointer;
-    border: none;
-    background-color: ${({ theme }) => theme.backgroundLevel2};
-    box-shadow: 0 1px 0 rgb(0 0 0 / 10%);
-    border-left: 1px solid ${({ theme }) => theme.borderBase};
-    width: 40px;
-    height: 40px;
-    @media (min-width: 600px) {
-      width: 64px;
-      height: 40px;
-    }
-  }
 `;
 
 export default function Search({ searchValue, setSearchValue }) {
     return (
         <StyledSearch>
-            <input type="text" onChange={(e) => setSearchValue(e.target.value)}/>
-            <button>
-                🔎
-            </button>
-        </StyledSearch>
+        <div className="form-control">
+          <label className="input-group  input-group-sm">
+            <input onChange={(e) => setSearchValue(e.target.value)} type="text" placeholder="Search…" className="input w-96 input-sm input-bordered" />
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="#181818"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+            </span>
+          </label>
+        </div>
+         </StyledSearch>
     )
 
 }

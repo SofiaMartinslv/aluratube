@@ -18,14 +18,14 @@ export const CSSReset = createGlobalStyle`
     flex-direction: column;
     min-height: 100%;
   }
-  body {
+  /* body {
     display: flex;
     flex: 1;
   }
   #__next {
     display: flex;
     flex: 1;
-  }
+  } */
   /* Globals */
   button,
   a {

@@ -9,7 +9,7 @@ import AddVideo from "../src/components/AddVideo";
 
 const theme = {
   light: {
-    backgroundBase: "#f9f9f9",
+    backgroundBase: "#f7f7f7",
     backgroundLevel1: "#ffffff",
     backgroundLevel2: "#f0f0f0",
     borderBase: "#e5e5e5",
