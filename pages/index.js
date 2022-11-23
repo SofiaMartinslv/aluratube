@@ -4,6 +4,8 @@ import styled from "styled-components";
 import Menu from "../src/components/Menu";
 import { StyledTimeline } from "../src/components/Timeline";
 import { videoService } from "../src/services/videosService";
+import AddVideo from "../src/components/AddVideo";
+
 
 function HomePage() {
   const service = videoService();
@@ -21,8 +23,8 @@ function HomePage() {
       <div>
         <Menu searchValue={searchValue} setSearchValue={setSearchValue} />
         <Header />
-        {/* <Timeline searchValue={searchValue} playlists={playlists} videos={videos}></Timeline> */}
-        <Timeline></Timeline>
+        <Timeline searchValue={searchValue} playlists={playlists} videos={videos}></Timeline>
+        <AddVideo playlists={playlists}/>
       </div>
     </>
   );
@@ -71,7 +73,7 @@ function Header() {
 function Timeline({ searchValue, ...props }) {
   return (
     <StyledTimeline>
-      {/* {props.playlists.length > 1 &&
+      {props.playlists.length > 1 &&
         props.playlists.map((playlist) => {
           return (
             <section key={playlist.id}>
@@ -96,7 +98,7 @@ function Timeline({ searchValue, ...props }) {
               </div>
             </section>
           );
-        })} */}
+        })}
     </StyledTimeline>
   );
 }

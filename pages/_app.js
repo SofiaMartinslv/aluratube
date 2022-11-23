@@ -5,7 +5,6 @@ import { ThemeProvider } from "styled-components";
 import ColorModeProvider, {
   ColorModeContext,
 } from "../src/components/Menu/components/ColorMode";
-import AddVideo from "../src/components/AddVideo";
 
 const theme = {
   light: {
@@ -38,7 +37,6 @@ function App({ Component, pageProps }) {
     <ThemeProvider theme={theme[context.mode]}>
       <CSSReset />
       <Component {...pageProps} />
-      <AddVideo />
     </ThemeProvider>
   );
 }

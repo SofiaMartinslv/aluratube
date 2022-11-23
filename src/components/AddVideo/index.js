@@ -7,6 +7,8 @@ function useForm(props) {
   return {
     values,
     handleChange: (e) => {
+      console.log(e.target.value)
+
       const value = e.target.value;
       const name = e.target.name;
       setValues({
@@ -20,9 +22,9 @@ function useForm(props) {
   };
 }
 
-export default function AddVideo() {
+export default function AddVideo(props) {
   const addVideoForm = useForm({
-    initialValues: { title: "", url: "" },
+    initialValues: { title: "", url: "", playlist: "" },
   });
   const [showModal, setShowModal] = React.useState(false);
   const getThumbUrl = function (videoUrl) {
@@ -58,12 +60,13 @@ export default function AddVideo() {
               onSubmit={(e) => {
                 e.preventDefault();
                 const thumbUrl = getThumbUrl(addVideoForm.values.url);
-                videoService().addVideo(
-                  addVideoForm.values.title,
-                  addVideoForm.values.url,
-                  thumbUrl,
-                  1
-                );
+                console.log(e)
+                // videoService().addVideo(
+                //   addVideoForm.values.title,
+                //   addVideoForm.values.url,
+                //   thumbUrl,
+                //   addVideoForm.values.playlist
+                // );
                 // .then((res) => console.log(res))
                 // .catch((err) => {
                 //   console.log(err);
@@ -97,24 +100,20 @@ export default function AddVideo() {
                 onChange={addVideoForm.handleChange}
               />
               <label className="label pb-0">
-                <span className="label-text">
-                  Playlist
-                </span>
+                <span className="label-text">Playlist</span>
               </label>
-              <select className="select select-bordered">
-                <option disabled selected>
-                  Playlist
-                </option>
-                <option>Star Wars</option>
-                <option>Harry Potter</option>
-                <option>Lord of the Rings</option>
-                <option>Planet of the Apes</option>
-                <option>Star Trek</option>
+
+              <select className="select select-bordered"  name="playlist" value={addVideoForm.values.playlist} onChange={addVideoForm.handleChange}>
+                {props.playlists.length > 1 &&
+                  props.playlists.map((playlist) => {
+                    return (
+                        <option key={playlist.id}>{playlist.name}</option>
+                    );
+                  })}
               </select>
+
               <label className="label pb-0">
-                <span className="label-text">
-                  Thumbnail
-                </span>
+                <span className="label-text">Thumbnail</span>
               </label>
               <img src={getThumbUrl(addVideoForm.values.url)}></img>
               <button type="submit" className="w-full btn btn-sm">
