@@ -22,8 +22,10 @@ export const StyledAddVideo = styled.div`
     right: 16px;
     cursor: pointer;
   }
-  input {
-    border-radius: 2px;
+  .modal-box {
+    background-color: ${({ theme }) => theme.backgroundBase};
+  }
+  input, select {
     border: 1px solid ${({ theme }) => theme.borderBase};
     padding: 8px 10px;
     margin-bottom: 10px;
@@ -31,7 +33,14 @@ export const StyledAddVideo = styled.div`
     color: #222222;
     background-color: #f9f9f9;
     color: ${({ theme }) => theme.textColorBase};
-    background-color: ${({ theme }) => theme.backgroundBase};
+    background-color: ${({ theme }) => theme.backgroundLevel2};
+    font-weight: inherit;
+  }
+
+  .red-button {
+    background-color: red;
+    border: none;
+    color: white;
   }
 
   img {

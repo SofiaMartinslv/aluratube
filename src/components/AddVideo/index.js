@@ -7,8 +7,6 @@ function useForm(props) {
   return {
     values,
     handleChange: (e) => {
-      console.log(e.target.value)
-
       const value = e.target.value;
       const name = e.target.name;
       setValues({
@@ -60,40 +58,25 @@ export default function AddVideo(props) {
               onSubmit={(e) => {
                 e.preventDefault();
                 const thumbUrl = getThumbUrl(addVideoForm.values.url);
-                console.log(e)
-                // videoService().addVideo(
-                //   addVideoForm.values.title,
-                //   addVideoForm.values.url,
-                //   thumbUrl,
-                //   addVideoForm.values.playlist
-                // );
-                // .then((res) => console.log(res))
-                // .catch((err) => {
-                //   console.log(err);
-                // });
-                // supabase
-                //   .from("video")
-                //   .insert({
-                //     title: addVideoForm.values.title,
-                //     url: addVideoForm.values.url,
-                //     thumb: thumbUrl,
-                //     playlist: 1,
-                //   })
-                // .then((res) => console.log(res))
-                // .catch((err) => {
-                //   console.log(err);
-                // });
+                videoService().addVideo(
+                  addVideoForm.values.title,
+                  addVideoForm.values.url,
+                  thumbUrl,
+                  addVideoForm.values.playlist
+                );
                 setShowModal(false);
                 addVideoForm.clearForm();
               }}
             >
               <input
+                className="input w-full"
                 placeholder="Video title"
                 name="title"
                 value={addVideoForm.values.title}
                 onChange={addVideoForm.handleChange}
               />
               <input
+                className="input w-full"
                 placeholder="URL"
                 name="url"
                 value={addVideoForm.values.url}
@@ -102,21 +85,22 @@ export default function AddVideo(props) {
               <label className="label pb-0">
                 <span className="label-text">Playlist</span>
               </label>
-
-              <select className="select select-bordered"  name="playlist" value={addVideoForm.values.playlist} onChange={addVideoForm.handleChange}>
-                {props.playlists.length > 1 &&
-                  props.playlists.map((playlist) => {
-                    return (
-                        <option key={playlist.id}>{playlist.name}</option>
-                    );
-                  })}
-              </select>
-
+              <div className="flex w-full">
+                <select className="select select-bordered flex-auto"  name="playlist" value={addVideoForm.values.playlist} onChange={addVideoForm.handleChange}>
+                  {props.playlists.length > 1 &&
+                    props.playlists.map((playlist) => {
+                      return (
+                          <option value={playlist.id} key={playlist.id}>{playlist.name}</option>
+                      );
+                    })}
+                </select>
+                <button className="w-14 ml-2 red-button btn tooltip tooltip-left" data-tip="Add playlist">+</button>
+              </div>
               <label className="label pb-0">
                 <span className="label-text">Thumbnail</span>
               </label>
               <img src={getThumbUrl(addVideoForm.values.url)}></img>
-              <button type="submit" className="w-full btn btn-sm">
+              <button type="submit" className="red-button w-full btn btn-sm">
                 Add
               </button>
             </form>
