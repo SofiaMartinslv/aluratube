@@ -37,10 +37,20 @@ export const StyledAddVideo = styled.div`
     font-weight: inherit;
   }
 
+  span {
+    color: ${({ theme }) => theme.textColorBase};
+  }
+
   .red-button {
     background-color: red;
     border: none;
     color: white;
+  }
+
+  .send-button[disabled] {
+    border: 1px solid ${({ theme }) => theme.borderBase};
+    background-color: ${({ theme }) => theme.backgroundLevel2};
+    color: #a7a7a7;
   }
 
   img {

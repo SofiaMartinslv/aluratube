@@ -34,6 +34,14 @@ export default function AddVideo(props) {
     }
   };
 
+  const hasAllValues = () => {
+    return (
+      !addVideoForm.values.title ||
+      !addVideoForm.values.url ||
+      !addVideoForm.values.playlist
+    );
+  };
+
   return (
     <StyledAddVideo>
       <button
@@ -152,7 +160,11 @@ export default function AddVideo(props) {
                 <span className="label-text">Thumbnail</span>
               </label>
               <img src={getThumbUrl(addVideoForm.values.url)}></img>
-              <button type="submit" className="red-button w-full btn btn-sm">
+              <button
+                disabled={hasAllValues()}
+                type="submit"
+                className="red-button send-button w-full btn btn-sm"
+              >
                 Add
               </button>
             </form>
