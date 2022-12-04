@@ -45,7 +45,7 @@ export default function AddVideo(props) {
   return (
     <StyledAddVideo>
       <button
-        className="add-video btn"
+        className="add-video bg-primary btn"
         onClick={() => setShowModal(!showModal)}
       >
         +
@@ -103,7 +103,10 @@ export default function AddVideo(props) {
                       value={addVideoForm.values.playlist}
                       onChange={addVideoForm.handleChange}
                     >
-                      {props.playlists.length > 1 &&
+                      <option value="" key="0">
+                        Playlist
+                      </option>
+                      {props.playlists.length > 0 &&
                         props.playlists.map((playlist) => {
                           return (
                             <option value={playlist.id} key={playlist.id}>
@@ -117,8 +120,8 @@ export default function AddVideo(props) {
                       onClick={() => {
                         setShowAddPlaylist(true);
                       }}
-                      className="w-14 ml-2 red-button btn tooltip tooltip-left"
-                      data-tip="Add playlist"
+                      className="w-14 ml-2 bg-primary border-0 btn tooltip tooltip-left"
+                      data-tip="New playlist"
                     >
                       +
                     </button>
@@ -137,20 +140,17 @@ export default function AddVideo(props) {
                       name="playlist"
                     />
                     <div className="flex">
+                      <button type="button" className="w-14 ml-2 btn-ghost btn">
+                        Add
+                      </button>
                       <button
                         type="button"
                         onClick={() => {
                           setShowAddPlaylist(false);
                         }}
-                        className="w-14 ml-2 red-button btn"
+                        className="w-14 ml-2 btn-ghost btn"
                       >
                         X
-                      </button>
-                      <button
-                        type="button"
-                        className="w-14 ml-2 red-button btn"
-                      >
-                        Add
                       </button>
                     </div>
                   </div>
@@ -179,3 +179,4 @@ export default function AddVideo(props) {
     </StyledAddVideo>
   );
 }
+

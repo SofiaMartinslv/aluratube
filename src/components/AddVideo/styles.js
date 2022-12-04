@@ -10,7 +10,6 @@ export const StyledAddVideo = styled.div`
     bottom: 16px;
     right: 16px;
     border: 0;
-    background-color: red;
     border-radius: 50%;
     z-index: 99;
     cursor: pointer;
