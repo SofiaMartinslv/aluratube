@@ -13,13 +13,20 @@ export function videoService() {
     getPlaylists() {
       return supabase.from("playlist").select("*");
     },
-    addVideo(title, url, thumbUrl, playlist) {
-      supabase.from("video").insert({
-        title: title,
-        url: url,
-        thumb: thumbUrl,
-        playlist: playlist,
-      }).then((res) => res);
+    addVideo(values) {
+      supabase
+        .from("video")
+        .insert(values)
+        .then((res) => res);
+    },
+    async addPlaylist(name) {
+      const { data } = await supabase
+        .from("playlist")
+        .insert({
+          name: name,
+        })
+        .select();
+      return data[0];
     },
   };
 }

@@ -17,6 +17,9 @@ function useForm(props) {
     clearForm() {
       setValues({});
     },
+    clearPlaylistValue() {
+      setValues({ ...values, playlist: "" });
+    },
   };
 }
 
@@ -40,6 +43,21 @@ export default function AddVideo(props) {
       !addVideoForm.values.url ||
       !addVideoForm.values.playlist
     );
+  };
+
+  const addVideo = (playlist) => {
+    videoService().addVideo({
+      title: addVideoForm.values.title,
+      url: addVideoForm.values.url,
+      thumb: getThumbUrl(addVideoForm.values.url),
+      playlist: playlist || addVideoForm.values.playlist,
+    });
+  };
+
+  const addVideoAndPlaylist = () => {
+    videoService()
+      .addPlaylist(addVideoForm.values.playlist)
+      .then((res) => addVideo(res.id));
   };
 
   return (
@@ -66,15 +84,9 @@ export default function AddVideo(props) {
               className="flex flex-col gap-2"
               onSubmit={(e) => {
                 e.preventDefault();
-                const thumbUrl = getThumbUrl(addVideoForm.values.url);
-                videoService().addVideo(
-                  addVideoForm.values.title,
-                  addVideoForm.values.url,
-                  thumbUrl,
-                  addVideoForm.values.playlist
-                );
                 setShowModal(false);
                 addVideoForm.clearForm();
+                showAddPlaylist ? addVideoAndPlaylist() : addVideo();
               }}
             >
               <input
@@ -119,6 +131,7 @@ export default function AddVideo(props) {
                       type="button"
                       onClick={() => {
                         setShowAddPlaylist(true);
+                        addVideoForm.clearPlaylistValue();
                       }}
                       className="w-14 ml-2 bg-primary border-0 btn tooltip tooltip-left"
                       data-tip="New playlist"
@@ -138,17 +151,17 @@ export default function AddVideo(props) {
                       className="input w-full"
                       placeholder="Playlist"
                       name="playlist"
+                      value={addVideoForm.values.playlist}
+                      onChange={addVideoForm.handleChange}
                     />
                     <div className="flex">
-                      <button type="button" className="w-14 ml-2 btn-ghost btn">
-                        Add
-                      </button>
                       <button
                         type="button"
                         onClick={() => {
                           setShowAddPlaylist(false);
+                          addVideoForm.clearPlaylistValue();
                         }}
-                        className="w-14 ml-2 btn-ghost btn"
+                        className="w-14 ml-2 btn btn-accent"
                       >
                         X
                       </button>
@@ -179,4 +192,3 @@ export default function AddVideo(props) {
     </StyledAddVideo>
   );
 }
-
